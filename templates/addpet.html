@@ -10,8 +10,8 @@
 
 {% block content %}
     </section>
-    <section id="pet-cards">
-        <form action="#">
+    <section id="form">
+        <form action="{{  url_for('add_pet') }}" method="POST">
             <div class="columns">
                 <div class="col1">
                     <div class="form-container">
