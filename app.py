@@ -1,4 +1,4 @@
-from flask import (render_template, 
+from flask import (render_template,
                     url_for, request, redirect)
 from models import db, Pet, app
 
@@ -14,7 +14,7 @@ def add_pet():
     if request.form: #if there is no form to be submitted we send the user to addpet.html
         print(request.form)
         print(request.form['name'])
-        new_pet = Pet(name=request.form['name'], age=request.form['age'], 
+        new_pet = Pet(name=request.form['name'], age=request.form['age'],
                         breed=request.form['breed'], color=request.form['color'],
                         size=request.form['size'], weight=request.form['weight'],
                         url=request.form['url'], url_tag=request.form['alt'],
@@ -48,7 +48,7 @@ def edit_pet(id):
         pet.pet_type = request.form['pet']
         pet.gender = request.form['gender']
         pet.spay = request.form['spay']
-        pet.weight = request.form['housetrained']
+        pet.house_trained = request.form['housetrained']
         pet.description = request.form['description']
         db.session.commit()
         return redirect(url_for('index'))
